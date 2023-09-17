@@ -1,0 +1,54 @@
+{
+    "scopeName": "source.asm",
+    "patterns": [
+        {
+            "begin": "#",
+            "end": "\n",
+            "name": "comment"
+        },
+        {
+            "desc": "important gas directives",
+            "match": "((\\.section|\\.global|\\.globl)\\s+.(data|text|\\w+))|\\.lcomm",
+            "name": "storage"
+        },
+        {
+            "desc": "labels",
+            "match": "\\S+:",
+            "name": "variable"
+        },
+        {
+            "desc": "instructions",
+            "match": "(mov[qldb]?|cmp[qldb]?|je|inc|jmp|jle|push[qb]?|pop|call|leave|ret|xor|imul[qldb]?|div[qldb]?|sub[qldb]?|add[qldb]?)",
+            "name": "keyword.control"
+        },
+        {
+            "match": "syscall",
+            "name": "constant.character.set.regexp"
+        },
+        {
+            "desc": ".data storage sizes",
+            "match": "(\\.quad|\\.ascii|\\.long|\\.short|\\.int|\\.byte)",
+            "name": "support.constant.property-value"
+        },
+        {
+            "desc": "pointer addressing mode",
+            "match": "(\\w|\\d)*\\(,?%\\w*,?\\d?\\)",
+            "name": "support.type"
+        },
+        {
+            "desc": "registers",
+            "match": "%([re]?ax|a[lh]|rbx|rcx|rdx|rdi|rsi|rbp|rsp)",
+            "name": "variable.other.constant"
+        },
+        {
+            "desc": "optional gas directives",
+            "match": "\\.equ|\\.include|\\.rept|\\.endr",
+            "name": "keyword.operator.quantifier.regexp"
+        },
+        {
+            "desc": "immediate addressing mode",
+            "match": "\\$\\w*",
+            "name": "entity.name.function"
+        }
+    ]
+}

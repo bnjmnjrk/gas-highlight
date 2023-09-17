@@ -1,0 +1,45 @@
+{
+  "name": "gas-highlight",
+  "displayName": "gas-highlight",
+  "description": "vscode extension for the gnu assembler",
+  "version": "0.0.1",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "src/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "assembly",
+        "aliases": [
+          "at&t assembly",
+          "assembly",
+          "gas",
+          "asm"
+        ],
+        "extensions": [
+          ".asm",
+          ".s",
+          ".S"
+        ],
+        "configuration": "src/language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "assembly",
+        "scopeName": "source.asm",
+        "path": "src/assembly.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.82.0",
+    "@types/node": "16.x",
+    "glob": "^10.3.3"
+  }
+}
