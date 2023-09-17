@@ -4,6 +4,7 @@
   "description": "vscode extension for the gnu assembler",
   "version": "0.0.1",
   "icon": "images/icon.png",
+  "publisher": "BenjaminJurk",
   "repository": {
     "type": "git",
     "url": "https://github.com/bnjmnjrk/gas-highlight.git"
